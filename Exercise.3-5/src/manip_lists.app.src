@@ -1,0 +1,12 @@
+{application, manip_lists,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { manip_lists, []}},
+  {env, []}
+ ]}.
