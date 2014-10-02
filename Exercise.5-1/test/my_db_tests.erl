@@ -7,6 +7,10 @@ start() ->
     my_db:write(lelle, stockholm),
     my_db:write(joern, stockholm).
 
+stop(_Pid) ->
+   my_db:stop(),
+   ?debugMsg("after stop").
+
  read_test_() -> 
   {setup,
    fun start/0,
@@ -28,9 +32,7 @@ delete_test_() ->
        {setup,
         fun start/0,
         fun stop/1,
-        [?_assertEqual([{joern, stockholm},{francesco,london}], my_db:delete(lelle)),
-         ?_assertEqual([{joern, stockholm},{lelle,stockholm},{francesco,london}], my_db:delete(foo))]}.
+        [?_assertEqual({ok, stockholm}, my_db:read(lelle)),
+	 ?_assertEqual(ok, my_db:delete(lelle)),
+         ?_assertEqual({error,instance}, my_db:read(lelle))]}.
 
-stop(_Pid) ->
-   my_db:stop(),
-   ?debugMsg("after stop").

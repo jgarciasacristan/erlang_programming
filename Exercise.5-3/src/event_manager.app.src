@@ -1,0 +1,12 @@
+{application, event_manager,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { event_manager, []}},
+  {env, []}
+ ]}.
