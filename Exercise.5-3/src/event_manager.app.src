@@ -9,5 +9,5 @@
                  ]},
   {mod, { event_manager, []}},
   {env, []},
-  {modules,[event_manager,io_handler]}
+  {modules,[event_manager,io_handler,log_handler]}
  ]}.
