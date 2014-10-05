@@ -8,5 +8,6 @@
                   stdlib
                  ]},
   {mod, { event_manager, []}},
-  {env, []}
+  {env, []},
+  {modules,[event_manager,io_handler]}
  ]}.
